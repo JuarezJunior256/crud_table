@@ -45,11 +45,11 @@ export class ClienteComponent implements OnInit {
   openDialogCliente() {
     const dialogRef = this.dialog.open(ModalClienteComponent, {
       width: '250px',
-      data: {cliente: Cliente}
+      data: { cliente: new Cliente() } // Aqui vc tava injetando a classe Cliente e n"âo uma objeto
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+    dialogRef.afterClosed().subscribe(cliente => {
+      console.log(cliente);
     });
   }
 

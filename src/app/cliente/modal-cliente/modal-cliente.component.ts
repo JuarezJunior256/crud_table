@@ -10,7 +10,9 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 export class ModalClienteComponent implements OnInit {
 
   constructor(
-    public dialogRef: MatDialogRef<ModalClienteComponent>) {}
+    @Inject(MAT_DIALOG_DATA) public data, // Falei q vc tava esquecendo de injetar os dados
+    public dialogRef: MatDialogRef<ModalClienteComponent>
+  ) {}
 
   onNoClick(): void {
     this.dialogRef.close();

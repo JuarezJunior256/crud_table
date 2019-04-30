@@ -1,10 +1,12 @@
 <div mat-dialog-content>
-  <p>What's your favorite animal?</p>
+  <p>Digite o nome do cliente</p>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.nome">
+    <input matInput [(ngModel)]="data.cliente.nome">
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Cancelar</button>
-  <button mat-button  [mat-dialog-close]="data.nome" cdkFocusInitial>Cadastrar</button>
+  <button mat-button  [mat-dialog-close]="data.cliente" cdkFocusInitial> <!-- Quando clicar nesse botão, o que vc vai receber no afterClosed vai ser o q vc informar aqui-->
+    Cadastrar
+  </button>
 </div>
